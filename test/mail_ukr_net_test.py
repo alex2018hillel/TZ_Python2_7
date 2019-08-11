@@ -19,7 +19,6 @@ class Test(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-        self.driver.implicitly_wait(10)
 
     def test_first(self):
         global action, theme, text, create_email
@@ -38,6 +37,11 @@ class Test(unittest.TestCase):
         password_field.send_keys(password)
         button_login = wdriver.find_element_by_xpath(Login_page.button_login)
         button_login.click()
+        try:
+            elem = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, Login_page.user_mail)))
+        except TimeoutException:
+            print "No found element"
         user_mail = wdriver.find_element_by_xpath(Login_page.user_mail)
         print(user_mail.text)
         assert user_mail.text == Create_mail.expected_name
@@ -53,7 +57,7 @@ class Test(unittest.TestCase):
             action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(text).perform()
             wdriver.find_element_by_xpath(Create_mail.submit_button).click()
             try:
-                elem = WebDriverWait(self.driver, 900).until(
+                elem = WebDriverWait(self.driver, 10).until(
                     EC.visibility_of_element_located((By.XPATH, Create_mail.default_button)))
                 print "Page is ready!"
             except TimeoutException:
@@ -102,7 +106,7 @@ class Test(unittest.TestCase):
         action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(email_text).perform()
         wdriver.find_element_by_xpath(Create_mail.submit_button).click()
         try:
-            elem = WebDriverWait(self.driver, 900).until(EC.visibility_of_element_located((By.XPATH, Create_mail.default_button)))
+            elem = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, Create_mail.default_button)))
             print "Page is ready!"
         except TimeoutException:
             print "Mail not create!"
@@ -110,7 +114,6 @@ class Test(unittest.TestCase):
 
         # Delete mails
         for i in range(15):
-            time.sleep(3)
             row_checks = wdriver.find_elements_by_xpath(Create_mail.row_check)
             row_checks[i+1].click()
         delete_button = wdriver.find_element_by_xpath(Create_mail.delete_button)
