@@ -8,13 +8,13 @@
 
 # 2. Codewars
 # Difference of Volumes of Cuboids
-![Alt text](Doc/1.png?raw=true "HTML Report")
-![Alt text](Doc/21.png?raw=true "HTML Report")
+![Alt text](docs/1.png?raw=true "HTML Report")
+![Alt text](docs/21.png?raw=true "HTML Report")
 
 # The Poet And The Pendulum
-![Alt text](Doc/2.png?raw=true "Allure Report")
-![Alt text](Doc/22.png?raw=true "Allure Report")
+![Alt text](docs/2.png?raw=true "Allure Report")
+![Alt text](docs/22.png?raw=true "Allure Report")
 
 # The Poet And The Pendulum
-![Alt text](Doc/3.png?raw=true "Allure Report")
-![Alt text](Doc/23.png?raw=true "Allure Report")
+![Alt text](docs/3.png?raw=true "Allure Report")
+![Alt text](docs/23.png?raw=true "Allure Report")
