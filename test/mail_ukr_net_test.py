@@ -1,17 +1,18 @@
 import re
 import time
 import unittest
-from selenium.webdriver.support import expected_conditions as EC, wait
 import configparser
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
-from pages.login_page import Login_page
-from pages.create_page import Create_mail
+from selenium.webdriver.support import expected_conditions as EC
+from src.pages.login_page import Login_page
+from src.pages.create_page import Create_mail
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from utils.random_data import Random_data
+from src.utils.random_data import Random_data
 
 class Test(unittest.TestCase):
     driver = None
@@ -37,7 +38,6 @@ class Test(unittest.TestCase):
         password_field.send_keys(password)
         button_login = wdriver.find_element_by_xpath(Login_page.button_login)
         button_login.click()
-        wdriver.implicitly_wait(10)
         user_mail = wdriver.find_element_by_xpath(Login_page.user_mail)
         print(user_mail.text)
         assert user_mail.text == Create_mail.expected_name
@@ -52,7 +52,12 @@ class Test(unittest.TestCase):
             wdriver.find_element_by_xpath(Create_mail.fild_subject).send_keys(theme)
             action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(text).perform()
             wdriver.find_element_by_xpath(Create_mail.submit_button).click()
-            time.sleep(3)
+            try:
+                elem = WebDriverWait(self.driver, 900).until(
+                    EC.visibility_of_element_located((By.XPATH, Create_mail.default_button)))
+                print "Page is ready!"
+            except TimeoutException:
+                print "Mail not create!"
             action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(Keys.TAB).perform()
             action = ActionChains(wdriver).send_keys(Keys.ENTER).perform()
 
@@ -68,8 +73,6 @@ class Test(unittest.TestCase):
 
             key = re.search(regex1, content[i].text)
             value = re.search(regex2, content[i].text)
-            print (key.group(0))
-            print (value.group(0))
 
             d = {key.group(0): value.group(0)}
             dicts.update(d)
@@ -92,24 +95,24 @@ class Test(unittest.TestCase):
             string2 = "It contains " + str(n_letters) + " letters and " + str(n_numbers) + " numbers"
             string = string1 + "\n" + string2
             email_text = email_text + '\n' + string
-            print (email_text)
 
         wdriver.find_element_by_xpath(Create_mail.create_button).click()
         wdriver.find_element_by_xpath(Create_mail.fild_input).send_keys(Create_mail.expected_name)
         wdriver.find_element_by_xpath(Create_mail.fild_subject).send_keys("mail")
         action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(email_text).perform()
         wdriver.find_element_by_xpath(Create_mail.submit_button).click()
-        time.sleep(3)
-        action = ActionChains(wdriver).send_keys(Keys.TAB).send_keys(Keys.TAB).perform()
-        action = ActionChains(wdriver).send_keys(Keys.ENTER).perform()
+        try:
+            elem = WebDriverWait(self.driver, 900).until(EC.visibility_of_element_located((By.XPATH, Create_mail.default_button)))
+            print "Page is ready!"
+        except TimeoutException:
+            print "Mail not create!"
+        wdriver.find_element_by_xpath(Create_mail.action_button).click()
 
         # Delete mails
         for i in range(15):
             time.sleep(3)
             row_checks = wdriver.find_elements_by_xpath(Create_mail.row_check)
-            row_checks[i-1].click()
-        row_checks = wdriver.find_elements_by_xpath(Create_mail.row_check)
-        row_checks[0].click()
+            row_checks[i+1].click()
         delete_button = wdriver.find_element_by_xpath(Create_mail.delete_button)
         delete_button.click()
 

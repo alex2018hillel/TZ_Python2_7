@@ -6,6 +6,9 @@
 * open the project in PyCharm
 * configure PyCharm to use Unittest as default test runner
 
+# Result run test
+![Alt text](docs/31.png?raw=true "HTML Report")
+
 # 2. Codewars
 # Difference of Volumes of Cuboids
 ![Alt text](docs/1.png?raw=true "HTML Report")
