@@ -1,0 +1,117 @@
+        ## editor = wdriver.find_element_by_xpath(Create_mail.fild_descr)
+           ## search_button = wdriver.find_element_by_xpath(Create_mail.fild_descriptions)
+           ## descr = ActionChains(wdriver).move_to_element(editor)
+           ## descr.click().build().perform()
+           ## action = ActionChains(wdriver).send_keys(Keys.ENTER).perform()
+           ## WebDriverWait(wdriver, 10).until(
+           ##     EC.presence_of_element_located((By.XPATH, '//div[@class="post-body"]')))
+           ## element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, Create_mail.fild_description)))
+           ## element.send_keys(text)
+
+           ############wait = WebDriverWait(wdriver, 5)
+            #element = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@id='0']/span[4]")))
+            #element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "sendmsg__ads-ready")))
+        ##########element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "action")))
+
+
+        # Collect message
+    #    wdriver.find_element_by_xpath(Create_mail.in_mail_box).click()
+   #     dicts = {}
+   #    content = wdriver.find_elements(By.XPATH, "//td[@class='msglist__row-subject']/a")
+    #    for i in range(len(content)):
+    #        print (i)
+    #        regex1 = ur"^\w{10}"
+   #         regex2 = ur"\s\w{10}"
+    #        key = re.search(regex1, content[i].text)
+    #        value = re.search(regex2, content[i].text)
+    #        d = {key.group(0): value.group(0)}
+    #        dicts.update(d)
+   ########         print (dicts)
+
+        # Find e-mail
+  #      with open("2.txt") as file:
+   #         array = [row.strip() for row in file]
+  #          for i in array:
+  #######      with open(r"C:\1.txt", "r") as file:
+  ########          for line in file:
+  #######              print(line)
+  #########              try:
+     #####             #assert (line == )
+  ########                  dict.setdefault(line)
+   #####             except NoSuchElementException:
+   #######                 return False
+   #######             return True
+
+
+        #    dict.setdefault(theme):
+
+      #  1111111111111111111111
+        # for i in range(len(a)):
+            #        with open(r"C:\1.txt", "r") as file:
+                #           for line in file:
+                #               print(line)
+                #              try:
+                # content = wdriver.find_element(By.XPATH, "//td[@class='msglist__row-subject']/a")
+                #              except NoSuchElementException:
+                #                  return False
+    #               return True
+
+        #    11111111111111111111
+
+
+            #      try:
+            # element = WebDriverWait(wdriver, 5).until(EC.presence_of_element_located((By.XPATH, Create_mail.new_create_button)))
+            # WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(By.ID, "u_0_f"))
+            #          element = WebDriverWait(wdriver, 5).until(expected_conditions.presence_of_element_located((By.XPATH, "//a[@id='0']/span[4]")))
+            # element = WebDriverWait(wdriver, 5).until(expected_conditions.element_to_be_clickable((By.XPATH, Create_mail.create_button)))
+            #           element.click()
+            #      except TimeoutException:
+            #          print("Failed to load search")
+            #      finally:
+            #           wdriver.quit()
+            # EC.element_to_be_clickable(By.XPATH, Create_mail.new_create_button).click()
+            # element = WebDriverWait(wdriver, 10).until(EC.element_to_be_clickable(By.XPATH, Create_mail.create_button).click()
+            # element = WebDriverWait(wdriver, 10).until(EC.element_to_be_clickable(Create_mail.create_button)
+            # element = wait.until(EC.element_to_be_clickable((By.ID, 'someid')))
+
+            #    #for i in range(len(a)):
+
+            #    #theme = a[i]
+            #    #    WebDriverWait(self.driver, 900).until(
+            #    #        EC.text_to_be_present_in_element((By.XPATH, "//span[contains(text(),theme)]"), "No data to display"))
+            # wdriver.find_element_by_xpath(Create_mail.create_button).click()
+            # wdriver.find_element_by_xpath("//input[@name='subject']").click()
+            # wdriver.implicitly_wait(10)
+            # id = "msglist_rows"
+
+            # wdriver.find_elements_by_xpath('//div[contains(text(), "' + text + '")]')
+            # elem = wdriver.find_elements_by_xpath("//*[contains(text(), line)]")
+
+            # d = [re.findall("(msg|[0 - 9]{20})", text)]
+            #     assert elem.text == id
+     #   for str in lst:
+     #       elements = collections.Counter(lst)
+     #       elements[str] += 1
+    #    elem = wdriver.find_element_by_class_name('msglist__row_href')
+
+        #c = [wdriver.find_element_by_css_selector("a.msglist__row_href") for x in range(0, 15)]
+            #wait = WebDriverWait(self)
+            #wait.until(expected_conditions.title_contains(("Sign up")))
+            #elements = wdriver.find_elements_by_xpath("//*[text()=theme]")
+            #print(elem.text)
+            #assert elements.text == id111111
+  #  with open("file.ext") as file:
+  #      array = [row.strip() for row in file]
+
+
+  #   d1 = dict(Ivan="manager", Mark="worker")
+  #   >> > print(d1)
+
+
+          #!!!!  dicts_text = dict.items(i)
+
+          #  line = Random_data.randoms_a[i]
+          #  dicts_text = dicts.setdefault(line)
+          #  mail_on_theme = line + dicts_text
+
+         #   "Received mail on theme

@@ -18,4 +18,14 @@ class Random_data:
         return ''.join(islice(char_gen, 10))
         pass
 
-
+    randoms_a = [rand_string(10) for x in range(0, 15)]
+    randoms_b = [rand_string(10) for x in range(0, 15)]
+    with open(r"C:\1.txt", "w") as file:
+        for line in randoms_a:
+            file.write(line + '\n')
+    with open(r"C:\2.txt", "w") as file:
+        for line in randoms_b:
+            file.write(line + '\n')
+    for i in range(len(randoms_b)):
+        theme = randoms_a[i]
+        text = randoms_b[i]
